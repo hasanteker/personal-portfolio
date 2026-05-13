@@ -1,0 +1,486 @@
+/* ============================================
+   Admin Panel — matches main IDE theme
+   ============================================ */
+
+.admin-body {
+    display: flex;
+    min-height: 100vh;
+    background: var(--bg-app);
+    color: var(--text-primary);
+    font-family: var(--font-ui);
+}
+
+/* ---------- SIDEBAR ---------- */
+.admin-sidebar {
+    width: 240px;
+    background: var(--bg-sidebar);
+    border-right: 1px solid var(--border);
+    padding: 1rem 0.75rem;
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    font-size: 13px;
+}
+
+.sidebar-logo {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--text-strong);
+    padding: 0.5rem 0.75rem 1.25rem;
+    border-bottom: 1px solid var(--border-soft);
+    margin-bottom: 1rem;
+}
+
+.sidebar-logo .logo-tag {
+    color: var(--accent-purple);
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    flex: 1;
+}
+
+.sidebar-nav a {
+    padding: 0.45rem 0.75rem;
+    border-radius: 4px;
+    color: var(--text-primary);
+    font-family: var(--font-mono);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: var(--transition);
+}
+
+.sidebar-nav a:hover {
+    background: var(--bg-elev-hover);
+    color: var(--text-strong);
+    text-decoration: none;
+}
+
+.sidebar-nav a.active {
+    background: rgba(97, 175, 239, 0.15);
+    color: var(--accent-blue);
+    border-left: 2px solid var(--accent-blue);
+    padding-left: calc(0.75rem - 2px);
+}
+
+.sidebar-footer {
+    border-top: 1px solid var(--border-soft);
+    padding-top: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.sidebar-user {
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    color: var(--text-muted);
+    padding: 0 0.5rem;
+    margin-bottom: 0.25rem;
+}
+
+.sidebar-user strong { color: var(--accent-green); }
+
+/* ---------- MAIN ---------- */
+.admin-main {
+    flex: 1;
+    padding: 2rem 2.5rem;
+    max-width: calc(100vw - 240px);
+    overflow-x: hidden;
+}
+
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 2rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid var(--border-soft);
+}
+
+.admin-header h1 {
+    font-family: var(--font-mono);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-strong);
+    margin-bottom: 0.25rem;
+}
+
+.text-muted {
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+}
+
+.admin-section {
+    margin-bottom: 2.5rem;
+}
+
+.admin-section h2 {
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-strong);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* ---------- STATS ---------- */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+}
+
+.stat-card {
+    background: var(--bg-elev);
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.stat-label {
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.stat-value {
+    font-family: var(--font-mono);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--accent-blue);
+    line-height: 1;
+}
+
+.stat-value.warning { color: var(--accent-yellow); }
+.stat-value.success { color: var(--accent-green); }
+.stat-value.purple  { color: var(--accent-purple); }
+
+.stat-link {
+    margin-top: 0.4rem;
+    color: var(--accent-blue);
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 500;
+}
+
+/* ---------- TABLES ---------- */
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--bg-elev);
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius);
+    overflow: hidden;
+    font-size: 13.5px;
+}
+
+.admin-table th,
+.admin-table td {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border-soft);
+}
+
+.admin-table thead th {
+    background: var(--bg-tabbar);
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    color: var(--text-muted);
+    font-weight: 600;
+    font-family: var(--font-mono);
+}
+
+.admin-table tbody tr:hover {
+    background: var(--bg-elev-hover);
+}
+
+.admin-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.actions-cell {
+    display: flex;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+}
+
+/* ---------- ADMIN FORM ---------- */
+.admin-form {
+    padding: 1.5rem;
+    background: var(--bg-elev);
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius);
+    margin-bottom: 1.25rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.checkbox-group label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    font-family: var(--font-mono);
+    font-size: 13px;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: var(--accent-blue);
+}
+
+.form-actions {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+}
+
+/* ---------- MESSAGES ---------- */
+.messages-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.message-card {
+    background: var(--bg-elev);
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+    border-left: 3px solid transparent;
+}
+
+.message-card.unread {
+    border-left-color: var(--accent-blue);
+}
+
+.message-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.5rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.message-head strong {
+    color: var(--text-strong);
+}
+
+.message-email {
+    font-family: var(--font-mono);
+    color: var(--accent-blue);
+    margin-left: 0.5rem;
+    font-size: 12.5px;
+}
+
+.message-date {
+    color: var(--text-muted);
+    font-size: 12px;
+    font-family: var(--font-mono);
+}
+
+.message-subject {
+    color: var(--text-primary);
+    margin-bottom: 0.75rem;
+    font-size: 13px;
+}
+
+.message-body {
+    color: var(--text-primary);
+    padding: 0.85rem 1rem;
+    background: var(--bg-app);
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius);
+    margin-bottom: 0.75rem;
+    white-space: pre-wrap;
+    font-size: 13.5px;
+    line-height: 1.6;
+}
+
+.message-foot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    font-size: 12px;
+}
+
+.message-actions {
+    display: flex;
+    gap: 0.4rem;
+    margin-left: auto;
+}
+
+/* ---------- LOGIN PAGE ---------- */
+.login-wrapper {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    position: relative;
+    background: var(--bg-app);
+}
+
+.login-card {
+    width: 100%;
+    max-width: 400px;
+    background: var(--bg-elev);
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius);
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.login-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 28px;
+    background: var(--bg-tabbar);
+    border-bottom: 1px solid var(--border-soft);
+}
+
+.login-card::after {
+    content: '● ● ●';
+    position: absolute;
+    top: 4px;
+    left: 10px;
+    color: var(--text-muted);
+    font-size: 12px;
+    letter-spacing: 3px;
+    line-height: 22px;
+}
+
+.login-card > * { position: relative; z-index: 1; }
+
+.back-link {
+    position: absolute;
+    top: 5px;
+    right: 12px;
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    color: var(--text-muted);
+    z-index: 2;
+}
+
+.back-link:hover {
+    color: var(--accent-blue);
+    text-decoration: none;
+}
+
+.login-header {
+    text-align: center;
+    margin: 1.25rem 0 1.75rem;
+}
+
+.login-logo {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+}
+
+.login-logo .logo-tag {
+    color: var(--accent-purple);
+}
+
+.login-header h1 {
+    font-size: 1.4rem;
+    margin-bottom: 0.4rem;
+    color: var(--text-strong);
+}
+
+.login-header p {
+    color: var(--text-muted);
+    font-size: 13px;
+}
+
+.login-hint {
+    margin-top: 1.25rem;
+    text-align: center;
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    color: var(--text-muted);
+}
+
+.login-hint code {
+    background: var(--bg-app);
+    border: 1px solid var(--border-soft);
+    padding: 0.1rem 0.4rem;
+    border-radius: 3px;
+    color: var(--accent-green);
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 900px) {
+    .admin-body {
+        flex-direction: column;
+    }
+
+    .admin-sidebar {
+        width: 100%;
+        height: auto;
+        position: static;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        padding: 0.75rem 1rem;
+        gap: 0.75rem;
+    }
+
+    .sidebar-logo {
+        margin: 0;
+        padding: 0;
+        border-bottom: none;
+        flex: 1;
+    }
+    .sidebar-nav { flex-direction: row; flex-wrap: wrap; }
+    .sidebar-nav a { padding: 0.4rem 0.6rem; }
+    .sidebar-footer {
+        flex-direction: row;
+        align-items: center;
+        border-top: none;
+        padding: 0;
+        margin: 0;
+        margin-left: auto;
+    }
+    .sidebar-user { margin: 0; }
+
+    .admin-main {
+        padding: 1.25rem;
+        max-width: 100%;
+    }
+    .form-row { grid-template-columns: 1fr; }
+    .admin-table { font-size: 12.5px; }
+    .admin-table th, .admin-table td { padding: 0.55rem; }
+}
